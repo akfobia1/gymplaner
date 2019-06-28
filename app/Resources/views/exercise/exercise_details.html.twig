@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+
+
+     {% block body %}
+
+
+         <h4>Exercise</h4>
+         {% for exercises in name %}
+             <table class="table table-striped table-dark">
+                 <thead>
+                 <tr>
+                     <th scope="col">Workout Name</th>
+                     <th scope="col">weight(kg)</th>
+                     <th scope="col">sets</th>
+                     <th scope="col">reps</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 <tr>
+                     <th scope="row">{{ exercises.name }}</th>
+                     <td>{{ exercises.weight }}</td>
+                     <td>{{ exercises.sets }}</td>
+                     <td>{{ exercises.reps }}</td>
+                 </tr>
+                 </tbody>
+             </table>
+         {% endfor %}
+
+     {% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+
+
+     {% block body %}
+
+
+       <h4>Choose Plan</h4>
+          {% for plans in name %} <li><a href="{{ path('create_training', {'id' : plans.getId}) }}">{{ plans.name }}</a>
+
+
+              </li>{% endfor %}
+      </ul>
+
+      <div >
+       <a href="{{ path('create_plan') }}"> Create new plan</a>
+      </div>
+
+     {% endblock %}

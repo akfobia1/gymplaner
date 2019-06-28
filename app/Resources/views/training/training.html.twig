@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+  {% block stylesheets %}
+      <link rel="stylesheet" href="{{ asset('css/exerciseSelect.css') }}"/>
+      <link rel="stylesheet" href="{{ asset('css/multisetform.css') }}"/>
+  {% endblock %}
+
+{% block title %} Create Training  {% endblock %}
+
+{% block header %} <h1> Create Training</h1>{% endblock %}
+
+{% block body %}
+
+    <div class="autocomplete" style="width:300px;">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

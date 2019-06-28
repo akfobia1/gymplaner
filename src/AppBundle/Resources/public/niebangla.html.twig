@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+   {% block stylesheets %}
+       <link rel="stylesheet" href="{{ asset('css/multisetform.css') }}"/>
+
+   {% endblock %}
+
+
+
+{% block body %}
+    <form id="exercise" >
+        <h1>Create Plan</h1>
+
+        <div class="tab">Select Exercise
+            <p><form autocomplete="off">
+                <div class="autocomplete" style="width:300px;">
+                    <input id="exeName" type="text" name="exeName" oninput="this.className = ''" >
+                </div>
+            </form></p>
+        </div>
+
+        <div class="tab" style="width:150px;">Choose weight(kg):
+            <p><input placeholder="1.00"  type="number" id="weight" name="weight"
+                      step="0.01" min="0" max="350"></p>
+        </div>
+        <div class="tab" style="width:100px;">Sets
+            <p><input placeholder="1" oninput="this.className = ''" type="number" id="exercise_sets" name="sets"
+                      min="1" max="99"></p>
+        </div>
+        <div class="tab" style="width:100px;">Repeats
+            <p><input placeholder="reps" oninput="this.className = ''" type="number" id="exercise_sets" name="repeats"
+                      min="1" max="99"></p>
+        </div>
+        <div style="overflow:auto;">
+            <div style="float:right;">
+                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+
+                <a href="/my_diary/create-training/add-exercise/{tName}/{n}" >
+                    <button type="submit"  id="addBtn" form="exeForm" >Add another Exercise</button>
+                </a>
+
+                <a class="nav-link" href="/my_diary/current-training/{tName}">
+                    <button type="button" id="submitBtn" form="exercise" >Done</button></a>
+                </a>
+
+            </div>
+
+        </div>
+        <!-- Circles which indicates the steps of the form: -->
+        <div style="text-align:center;margin-top:40px;">
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+        </div>
+
+
+
+    </form>
+
+    {% block javascripts %}
+        {% javascripts '@workoutDiaryBundle/Resources/public/jsaddF/*'
+            '@workoutDiaryBundle/Resources/public/js/*'
+        %}
+            <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    {% endblock %}
+{% endblock %}

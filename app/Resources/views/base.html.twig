@@ -1,0 +1,73 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Bootstrap core CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lux/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/multisetform.css') }}"/>
+
+    {% endblock %}
+
+
+    <style>
+
+    </style>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+    <a class="navbar-brand" href="#">Workout Diary</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/plan/create">Create Plan</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/plan/show-plans">Show Plans</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/plan/create_training">Create Training</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/plan/training_list">Training List</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/plan/create-exercise">Create Exercise</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/plan/exercise_list">LIST Exercise</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/plan/history">History</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<main role="main" class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            {% block body %}{% endblock %}
+        </div>
+    </div>
+</main><!-- /.container -->
+{% block javascripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Create Exercise {% endblock %}
+
+{% block header %} <h1> Create Exercise</h1>{% endblock %}
+
+  {% block stylesheets %}
+      <link rel="stylesheet" href="{{ asset('css/exerciseSelect.css') }}"/>
+      <link rel="stylesheet" href="{{ asset('css/multisetform.css') }}"/>
+  {% endblock %}
+
+{% block body %}
+
+
+    {{ form_start(form, { 'attr': {'autocomplete': 'off'} }) }}
+        <div class="tab">
+                <div class="autocomplete" style="width:300px;">
+                    {{ form_widget(form) }}
+                </div>
+        </div>
+
+        <div class="tab" style="width:150px;">Choose weight(kg):
+                       {{ form_widget(form) }}
+        </div>
+        <div class="tab" style="width:100px;">Sets
+                       {{ form_widget(form) }}
+        </div>
+        <div class="tab" style="width:100px;">Repeats
+                       {{ form_widget(form) }}
+
+    {{ form_end(form) }}
+
+{% endblock %}
+
+   {% block javascripts %}
+          {% javascripts '@AppBundle/Resources/public/js1/*'
+          '@AppBundle/Resources/public/js2/*'
+           %}
+              <script src="{{ asset_url }}"></script>
+          {% endjavascripts %}
+   {% endblock %}
